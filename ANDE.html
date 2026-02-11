@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis Crítico ANDE - Grupo 4</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #003366; /* Azul profundo académico */
+            --accent: #c0392b; /* Rojo crítico */
+            --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            --card-bg: #ffffff;
+            --text: #2c3e50;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg-gradient);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* PORTADA HEROICA */
+        header {
+            background: linear-gradient(rgba(0,51,102,0.9), rgba(0,51,102,0.8)), url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .uni-title {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .meta-info {
+            background: rgba(255,255,255,0.1);
+            display: inline-block;
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            margin-top: 20px;
+        }
+
+        /* CONTENEDOR PRINCIPAL */
+        .container {
+            max-width: 1000px;
+            margin: -50px auto 50px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* TARJETAS DE CONTENIDO */
+        .card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            border-left: 5px solid var(--primary);
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .card-header i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-right: 15px;
+            background: #eef2f5;
+            padding: 15px;
+            border-radius: 50%;
+        }
+
+        h2 {
+            margin: 0;
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+
+        /* ESTILOS DE IMAGEN DENTRO DE TARJETAS */
+        .img-banner {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 20px 0;
+            filter: brightness(0.9);
+        }
+
+        /* CAJAS ESPECIALES */
+        .alert-box {
+            background-color: #fff5f5;
+            border-left: 5px solid var(--accent);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .highlight-box {
+            background-color: #e8f4fd;
+            border-left: 5px solid #3498db;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+
+        /* COMPARATIVA VISUAL */
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .comp-col {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .comp-col h3 { color: var(--accent); }
+        .comp-col.blue h3 { color: var(--primary); }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        a.ref-link {
+            display: inline-block;
+            margin: 5px;
+            padding: 8px 15px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            transition: background 0.3s;
+        }
+
+        a.ref-link:hover {
+            background: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .comparison { grid-template-columns: 1fr; }
+            .container { margin-top: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="uni-title">Universidad Castro Carazo</div>
+        <div style="font-size: 0.9rem; margin-bottom: 10px;">Licenciatura en Ciencias de la Educación con énfasis en Docencia</div>
+        
+        <h1>ANDE: ANÁLISIS CRÍTICO</h1>
+        <p style="font-size: 1.5rem; font-weight: 300;">Del Origen Histórico a la Crisis de Relevancia</p>
+
+        <div class="meta-info">
+            <p><strong>Curso:</strong> LD5033 Legislación Educativa | <strong>Grupo 4</strong></p>
+            <p><strong>Elaborado por:</strong> Daniel Tijerino & Keyleen Gamboa</p>
+            <p><strong>Profesor(a):</strong> Hilda María González Barahona</p>
+            <p style="margin-top: 10px; font-size: 0.8rem;">Febrero 14, 2026</p>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-book-reader"></i>
+                <h2>1. ¿Qué es la ANDE?</h2>
+            </div>
+            <p>Las siglas corresponden a <strong>Asociación Nacional de Educadores</strong>. Es la organización magisterial "madre" de Costa Rica. Jurídicamente constituida bajo la <strong>Ley N.º 10 (1942)</strong>, opera como un híbrido: gremio político y corporación financiera.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-history"></i>
+                <h2>2. Contexto Histórico: El "Porqué"</h2>
+            </div>
+            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1632&q=80" alt="Escuela Antigua" class="img-banner">
+            
+            <div class="highlight-box">
+                <strong><i class="fas fa-fist-raised"></i> El Origen Heroico (1942):</strong><br>
+                Nació por hambre y persecución. Antes del Servicio Civil, el maestro era un "botín político". Si no apoyaba al partido de turno, lo despedían o lo enviaban al exilio rural. La ANDE nació para dignificar la profesión, no para pedir lujos.
+            </div>
+            <p><strong>Contraste Crítico:</strong> Hoy, en 2026, la organización a menudo utiliza esa estructura histórica para proteger la ineficiencia bajo la excusa de "derechos adquiridos", traicionando su ideal meritocrático original.</p>
+        </div>
+
+        <div class="card" style="border-left-color: var(--accent);">
+            <div class="card-header">
+                <i class="fas fa-balance-scale"></i>
+                <h2 style="color: var(--accent);">3. La Distinción Técnica Vital</h2>
+            </div>
+            <p>Para no caer en errores conceptuales, debemos diferenciar:</p>
+            
+            <div class="comparison">
+                <div class="comp-col blue">
+                    <i class="fas fa-users fa-2x" style="color:var(--primary); margin-bottom:10px;"></i>
+                    <h3>ANDE (Sindicato)</h3>
+                    <p>Ley N.º 10. Afiliación Voluntaria. Fin Político.</p>
+                </div>
+                <div class="comp-col">
+                    <i class="fas fa-piggy-bank fa-2x" style="color:var(--accent); margin-bottom:10px;"></i>
+                    <h3>Caja de ANDE</h3>
+                    <p>Ley N.º 12. <strong>Afiliación Obligatoria</strong>. Fin Financiero.</p>
+                </div>
+            </div>
+
+            <div class="alert-box">
+                <strong>Análisis Crítico:</strong> La dirigencia utiliza el éxito financiero de la Caja (que es de todos) para legitimar su gestión sindical. Es una "Estrategia de Confusión de Marca".
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-gavel"></i>
+                <h2>4. Influencia en el Gobierno (En declive)</h2>
+            </div>
+            <img src="https://images.unsplash.com/photo-1555848962-6e79363ec58f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1333&q=80" alt="Gobierno y Leyes" class="img-banner">
+            <p>La ANDE ha perdido su "Poder de Veto". Dos leyes recientes desmantelaron su fuerza:</p>
+            <ul>
+                <li><strong>Ley N.º 9808 (Huelgas):</strong> Declaró la educación servicio esencial. La huelga ya no paraliza al país sin costo salarial.</li>
+                <li><strong>Ley Empleo Público (N.º 10.159):</strong> Impuso el Salario Global, quitándoles el control sobre los pluses e incentivos.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-users-slash"></i>
+                <h2>5. Ruptura con la Sociedad</h2>
+            </div>
+            <p>Existe una desconexión moral. Al oponerse a leyes como la <strong>Ley N.º 9999</strong> (protección de menores) bajo argumentos de "debido proceso laboral", los padres perciben que el sindicato protege al adulto cuestionado por encima de la seguridad del niño.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-chart-line"></i>
+                <h2>6. Influencia en el Desarrollo</h2>
+            </div>
+            <p>Según el <em>Estado de la Educación</em>, vivimos un "Apagón Educativo".</p>
+            <p>Al defender la antigüedad sobre la calidad y oponerse a la evaluación del desempeño, la ANDE fomenta involuntariamente la <strong>mediocridad institucionalizada</strong>. El buen docente gana lo mismo que el malo, desmotivando la innovación necesaria para el desarrollo país.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <i class="fas fa-lightbulb"></i>
+                <h2>7. Liderazgo y Propuestas</h2>
+            </div>
+            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1532&q=80" alt="Educación Futuro" class="img-banner">
+            
+            <p>El liderazgo actual sufre de "Gerontocracia" (ideas viejas para problemas nuevos). Nuestra propuesta para salvar la relevancia de ANDE:</p>
+            <ol>
+                <li>Transformarse en un <strong>Think Tank</strong> técnico, no solo de protesta.</li>
+                <li>Liderar la <strong>Evaluación de Calidad</strong> en lugar de bloquearla.</li>
+                <li>Separar la política sindical de la administración financiera de la Caja.</li>
+            </ol>
+        </div>
+
+        <footer>
+            <h3>Referencias Oficiales (Click para validar)</h3>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+                <a href="http://www.pgrweb.go.cr/scij/Busqueda/Normativa/Normas/nrm_texto_completo.aspx?param1=NRTC&nValor1=1&nValor2=33086&nValor3=34870&strTipM=TC" target="_blank" class="ref-link"><i class="fas fa-link"></i> Ley N.º 10 (ANDE)</a>
+                <a href="http://www.pgrweb.go.cr/scij/Busqueda/Normativa/Normas/nrm_texto_completo.aspx?param1=NRTC&nValor1=1&nValor2=22026&nValor3=23348&strTipM=TC" target="_blank" class="ref-link"><i class="fas fa-link"></i> Ley N.º 12 (Caja)</a>
+                <a href="http://www.pgrweb.go.cr/scij/Busqueda/Normativa/Normas/nrm_texto_completo.aspx?param1=NRTC&nValor1=1&nValor2=90367&nValor3=118928&strTipM=TC" target="_blank" class="ref-link"><i class="fas fa-link"></i> Ley Huelgas</a>
+                <a href="https://estadonacion.or.cr/informe-estado-educacion/" target="_blank" class="ref-link"><i class="fas fa-link"></i> Estado Educación 2023</a>
+            </div>
+            <p style="margin-top: 20px;">&copy; 2026 Universidad Castro Carazo - Grupo 4</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
